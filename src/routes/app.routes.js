@@ -1,3 +1,4 @@
+import { Feather } from '@expo/vector-icons'
 
 import { useEffect, useState } from "react"
 
@@ -59,21 +60,22 @@ export function AppRoutes() {
             <Tabs.Navigator screenOptions={{ 
                 headerShown: true,
                 headerShadowVisible: false,
-                headerStyle: { backgroundColor: "rgb(9 9 11)", elevation: 0, shadowOpacity: 0, borderBottomWidth: 0 },
+                headerStyle: { backgroundColor: "rgb(39 39 42)", elevation: 0, shadowOpacity: 0, borderBottomWidth: 0 },
                 headerTitleStyle: { color: 'white' },
                 tabBarShowLabel: false,
-                tabBarStyle: { backgroundColor: "rgb(9 9 11)" },
+                tabBarStyle: { backgroundColor: "rgb(39 39 42)" },
                 tabBarActiveTintColor: "rgb(250 204 21)",
                 tabBarInactiveTintColor: "rgb(156 163 175)",
             }}>
-                <Tabs.Screen name="HomePage" component={DiseasesStackScreen} />
+                <Tabs.Screen name="Home Page" component={DiseasesStackScreen} 
+                    options={{ tabBarIcon: ({ color }) => ( <Feather name='home' size={25} color={color} /> )}}/>
                 {!user ? 
                 <Tabs.Screen name="Registration" component={LoginStackScreen} 
-                    // options={{ tabBarIcon: ({ color }) => ( <Feather name='user' size={25} color={color} /> )}}
+                    options={{ tabBarIcon: ({ color }) => ( <Feather name='user' size={25} color={color} /> )}}
                 />
                 :
                 <Tabs.Screen name="Profile" component={Profile} 
-                    // options={{ tabBarIcon: ({ color }) => ( <Feather name='user' size={25} color={color} /> )}}
+                    options={{ tabBarIcon: ({ color }) => ( <Feather name='user' size={25} color={color} /> )}}
                 />}
             </Tabs.Navigator>
         )

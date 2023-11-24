@@ -32,11 +32,11 @@ export default function Login({ navigation }){
     }
 
     return(
-        <View style={{ flex: 1, justifyContent: "center", paddingRight: 32, paddingLeft: 32, paddingTop: 30, backgroundColor: "#6c757d" }}>
+        <View style={{ flex: 1, justifyContent: "center", paddingRight: 32, paddingLeft: 32, paddingTop: 30, backgroundColor: "rgb(39 39 42)" }}>
             <View style={{ alignItems: "center", paddingTop: 250, paddingBottom: 250 }}>
-                <Text style={{ color: 'white' }}>Entrar</Text>
+                <Text style={{  color: 'white', fontSize: 25, padding: 20 }}>Entrar</Text>
                 <TextInput
-                    style={{ color: 'white', width: 200, borderWidth: 1, borderStyle: "solid", borderColor: '#000000', borderRadius: 5 ,margin: 10, padding: 5 }}
+                    style={{ color: 'white', width: 200, borderStyle: "solid",  borderRadius: 5 , backgroundColor: 'rgb(82 82 91)',margin: 10, padding: 5 }}
                     placeholder="E-mail"
                     placeholderTextColor="#FAF9F6"
                     keyboardAppearance="dark"
@@ -45,7 +45,7 @@ export default function Login({ navigation }){
                     value={email}
                 />
                 <TextInput
-                    style={{ color: 'white', width: 200, borderWidth: 1, borderStyle: "solid", borderColor: '#000000', borderRadius: 5 ,margin: 10, padding: 5 }}
+                    style={{ color: 'white', width: 200, backgroundColor: 'rgb(82 82 91)', borderRadius: 5 ,margin: 10, padding: 5 }}
                     placeholder="Senha"
                     placeholderTextColor="#FAF9F6"
                     keyboardAppearance="dark"
@@ -54,11 +54,11 @@ export default function Login({ navigation }){
                     onChangeText={(pass) => setPassword(pass)}
                     value={password}
                 />
-                <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-                    <Text style={{ color: 'white' }}>Criar Conta</Text>
+                <TouchableOpacity style={{ borderWidth: 2, borderRadius: 6, borderColor: 'white', padding: 4, margin: 10, backgroundColor: 'white',  marginTop:15}} onPress={() => navigation.navigate('Register')}>
+                    <Text style={{fontWeight: 'bold', fontSize: 16, width: 100, textAlign: 'center'}}>Criar Conta</Text>
                 </TouchableOpacity>
-                <TouchableOpacity onPress={loginUser}>
-                    <Text style={{ color: 'white' }}>Entrar</Text>
+                <TouchableOpacity style={{ borderWidth: 2, borderRadius: 6, borderColor: 'white', padding: 4, margin: 10, backgroundColor: 'white',  marginTop:15}} onPress={loginUser}>
+                    <Text style={{fontWeight: 'bold', fontSize: 16, width: 100, textAlign: 'center'}}>Entrar</Text>
                 </TouchableOpacity>
             </View>
         </View>

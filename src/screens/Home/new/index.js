@@ -53,36 +53,39 @@ export default function FormDoenca({ navigation }) {
 
 
     return(
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center", paddingTop: 30, backgroundColor: "#343A40" }}>
-            <View style={{ alignItems: "center", width: "100%", height: "90%", padding: 20, backgroundColor: "#6c757d" }}>
-                <Text style={{  color: 'white', fontSize: 25, padding: 20 }}>Cadastrar Pacote</Text>
-                <Text>Nome</Text>
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center", paddingTop: 30, backgroundColor: "rgb(39 39 42)" }}>
+            <View style={{ alignItems: "center", width: "100%", height: "90%", padding: 20, backgroundColor: "rgb(39 39 42)" }}>
+                <Text style={{  color: 'white', fontSize: 25, padding: 20 }}>Cadastrar Doença</Text>
+                <Text style={{  color: 'white', fontSize: 15, margin: 5 }}> Nome</Text>
                 <TextInput
-                    style={{ width: 200, borderWidth: 1, borderStyle: "solid", borderColor: '#000000', borderRadius: 5 , borderRadius: 10, padding: 4 }}
+                    style={{padding: 5, borderRadius: 10, width: 200, backgroundColor: 'rgb(82 82 91)'}}
                     placeholder='Nome'
+                    placeholderTextColor = "#FFF"
                     onChangeText={setName}
                     value={name}
                 />
-                <Text>Descrição</Text>
+                <Text style={{  color: 'white', fontSize: 15, margin: 5 }} >Descrição</Text>
                 <TextInput 
-                    style={{ width: 200, borderWidth: 1, borderStyle: "solid", borderColor: '#000000', borderRadius: 10, marginBottom: 5 ,padding: 4 }}
+                    style={{padding: 5, borderRadius: 10, width: 200, backgroundColor: 'rgb(82 82 91)'}}
                     placeholder='Descrição'
+                    placeholderTextColor = "#FFF"
                     onChangeText={setDescription}
                     value={description}
                 />
-                <Text>Reomendacoes</Text>
+                <Text style={{  color: 'white', fontSize: 15, margin: 5 }}>Reomendações</Text>
                 <TextInput 
-                    style={{ width: 200, borderWidth: 1, borderStyle: "solid", borderColor: '#000000', borderRadius: 10, marginBottom: 5 ,padding: 4 }}
-                    placeholder='Tipo'
+                    style={{padding: 5, borderRadius: 10, width: 200, backgroundColor: 'rgb(82 82 91)'}}
+                    placeholder='Recomendação'
+                    placeholderTextColor = "#FFF"
                     onChangeText={setRecomendations}
                     value={recomendations}
                 />
 
                 <TouchableOpacity
-                    style={{ borderWidth: 2, borderRadius: 6, borderColor: 'black', padding: 4}}
+                    style={{ borderWidth: 2, borderRadius: 6, borderColor: 'white', padding: 4, margin: 10, backgroundColor: 'white',  marginTop:15}}
                     onPress={() => createDoenca()}
                 >
-                    <Text> Salvar </Text>
+                    <Text style={{fontWeight: 'bold', fontSize: 16, width: 100, textAlign: 'center'}}> Salvar </Text>
                 </TouchableOpacity>
             </View>
         </View>

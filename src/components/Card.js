@@ -7,9 +7,9 @@ import { Feather } from '@expo/vector-icons'
 export default function Card({ humidity, item, onDelete }){
     // console.log('nao sei' + item)
     return(
-        <View className="bg-zinc-800 max-w-xs p-4 mt-10 rounded-xl">
-            <View className="gap-1 items-center">
-                <Text className="text-2xl font-bold text-white">{item.name}</Text>
+        <View className="bg-zinc-700 w-72 p-4 mt-10 rounded-xl ">
+            <View className="gap-1">
+                <Text className="text-2xl font-bold text-white text-center">{item.name}</Text>
                 <Text className="text-white text-lg">{item.description}</Text>
                 <Text className="text-white text-lg">{item.recomendations}</Text>
                 <Text className="text-white text-lg">{humidity}</Text>

@@ -79,15 +79,24 @@ export default function Home({ navigation }){
     // })
 
     return(
-        <SafeAreaView className="flex justify-center items-center bg-zinc-950 w-full h-full">
+        <SafeAreaView className="flex justify-center items-center bg-zinc-800 w-full h-full">
             <View>
-                <View className="items-center">
+                <View className="items-center m-2">
                     <TouchableOpacity className="">
-                        <Feather name='plus-circle' size={25} color={'yellow'}
+                        <Feather name='plus-circle' size={25} color={'white'}
                             onPress={() => navigation.navigate("New")}
                         />
                     </TouchableOpacity>
                 </View>
+                <TextInput
+                    placeholder="Search any city"
+                    placeholderTextColor="#FFF"
+                    keyboardAppearance="dark"
+                    value={location}
+                    onChangeText={(value) => setLocation(value)}
+                    onBlur={() => getData()}
+                    style={{borderWidth: 2, borderColor: 'white', padding: 5, marginTop: 10, borderRadius: 10}}
+                /> 
                 <FlatList 
                     data={diseases}
                     showsVerticalScrollIndicator={false}
@@ -96,14 +105,7 @@ export default function Home({ navigation }){
                         <Card item={item} humidity={getWeatherData == '' ? null : `${getWeatherData.humidity}%`} onDelete={deleteDiseases} />
                     }
                 />
-                <TextInput
-                    placeholder="Search any city"
-                    placeholderTextColor="#FFF"
-                    keyboardAppearance="dark"
-                    value={location}
-                    onChangeText={(value) => setLocation(value)}
-                    onBlur={() => getData()}
-                /> 
+
             </View>
         </SafeAreaView>
     )
