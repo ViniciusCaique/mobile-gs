@@ -95,14 +95,14 @@ export default function Home({ navigation }){
                     value={location}
                     onChangeText={(value) => setLocation(value)}
                     onBlur={() => getData()}
-                    style={{borderWidth: 2, borderColor: 'white', padding: 5, marginTop: 10, borderRadius: 10}}
+                    style={{borderWidth: 2, borderColor: 'white', padding: 5, marginTop: 10, borderRadius: 10, color: 'white'}}
                 /> 
                 <FlatList 
                     data={diseases}
                     showsVerticalScrollIndicator={false}
                     keyExtractor={(item, index) => index.toString()}
                     renderItem={({ item }) => 
-                        <Card item={item} humidity={getWeatherData == '' ? null : `${getWeatherData.humidity}%`} onDelete={deleteDiseases} />
+                        <Card item={item} humidity={getWeatherData == '' ? null : `Umidade: ${getWeatherData.humidity}%`} onDelete={deleteDiseases} />
                     }
                 />
 
